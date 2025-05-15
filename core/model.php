@@ -13,14 +13,6 @@ class model extends DB {
 
     }
 
-    public function findAll(){
-        $stmt = $this->co->prepare("SELECT * FROM " .$this->table);
-        $stmt->execute();
-        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($data);
-        return $data;
-    }
-
     public function find(bool $mode, $id, $search, $column = '*') {
         $stmt = $this->co->prepare($this->requester->find($this->table, $column, [$search], [$id]));
         //var_dump($stmt);

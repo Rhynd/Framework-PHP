@@ -9,7 +9,7 @@ class Requester {
 
     }
 
-    public function whatSearch(array $search, int $times){
+    private function whatSearch(array $search, int $times){
         if (count($search) != $times) {
             $what = [];
             for ($i = 0; $i < $times; $i++) {
@@ -27,7 +27,7 @@ class Requester {
         }
     }
 
-    public function formWhere(string $cond, array $search, array $quoi){
+    private function formWhere(string $cond, array $search, array $quoi){
         $searchF = $this->whatSearch($search, count($quoi));
         $where = [];
         $where[0] = $searchF[0] ." like '" . $quoi[0] . "'";
