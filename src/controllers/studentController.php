@@ -29,7 +29,6 @@ class studentController extends Controller {
         }
 
     public function postadd(){
-        var_dump($_POST);
         $data = $this->student->insert($_POST);
         $this->set(compact("data"));
         $this->render();
@@ -37,7 +36,6 @@ class studentController extends Controller {
     }
 
     public function postedit(){
-        var_dump($_POST);
         $data = $this->student->update($_POST);
         $this->set(compact("data"));
         $this->render();

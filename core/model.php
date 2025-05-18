@@ -15,7 +15,6 @@ class model extends DB {
 
     public function find(bool $mode, $id, $search, $column = '*') {
         $stmt = $this->co->prepare($this->requester->find($this->table, $column, [$search], [$id]));
-        //var_dump($stmt);
         $stmt->execute();
         if (!$mode) {
             $data = $stmt->fetch(PDO::FETCH_ASSOC);
